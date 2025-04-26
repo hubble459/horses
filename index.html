@@ -4,14 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RND spider web</title>
-    <script defer src="index.js"></script>
+    <title>Horses</title>
 </head>
 
 <body>
-    <canvas id="canvas" width="500" height="500">
-        <p>Canvas is not supported on your device :(</p>
-    </canvas>
+    <main>
+        <h1>horses</h1>
+
+        <nav id="navigation"></nav>
+
+        <canvas id="canvas" width="500" height="500">
+            <p>Canvas is not supported on your device :(</p>
+        </canvas>
+    </main>
+    <script type="module" src="dist/index.js"></script>
 </body>
+
+<style>
+    html,
+    body {
+        background-color: #fff8f6;
+    }
+
+    main {
+        margin: 0 auto;
+        width: 60%;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 4rem;
+
+        background-size: 1800% 1800%;
+        background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(222, 168, 248, 1) 0%, rgba(168, 222, 258, 1) 21.9%, rgba(189, 250, 205, 1) 35.6%, rgba(243, 250, 189, 1) 53.9%, rgba(250, 227, 189, 1) 66.8%, rgba(248, 172, 171, 1) 95%, rgba(254, 170, 212, 1) 99.9%);
+
+        animation-name: pastel-rainbow;
+        animation-duration: 4s;
+        animation-timing-function: ease;
+        animation-iteration-count: infinite;
+    }
+
+    canvas {
+        width: 100%;
+        height: 100%;
+    }
+
+    @keyframes pastel-rainbow {
+        0% {
+            background-position: 0% 82%
+        }
+
+        50% {
+            background-position: 100% 19%
+        }
+
+        100% {
+            background-position: 0% 82%
+        }
+    }
+</style>
 
 </html>
