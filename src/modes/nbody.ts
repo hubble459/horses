@@ -12,9 +12,9 @@ interface Particle {
 export default function play(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D): void {
     const rand = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1) + min);
     const particles: Particle[] = [];
-    const G = 0.09; // Gravitational constant
+    const G = 0.1; // Gravitational constant
     const numParticles = 100; // Customizable number of particles
-    const mouse = { x: 0, y: 0, mass: 500 }; // Mouse pointer with the largest mass
+    const mouse = { x: 0, y: 0, mass: 1000 }; // Mouse pointer with the largest mass
 
     // Initialize particles
     for (let i = 0; i < numParticles; i++) {
@@ -65,8 +65,8 @@ export default function play(canvas: HTMLCanvasElement, ctx: CanvasRenderingCont
             }
 
             // Update velocity and position
-            particle.vx += ax;
-            particle.vy += ay;
+            particle.vx += Math.min(Math.max(ax, -10), 10);
+            particle.vy += Math.min(Math.max(ay, -10), 10);
             particle.x += particle.vx;
             particle.y += particle.vy;
 
